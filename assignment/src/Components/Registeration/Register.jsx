@@ -14,7 +14,7 @@ function Register(){
         console.log(name,email,password)
         e.preventDefault();
         try{
-            await axios.post("http://localhost:5000/register",{name,email,password})
+            await axios.post("https://chatbot-ozp9.onrender.com/register",{name,email,password})
             alert("Verification email sent. Please check your inbox.")
             navigate("/login");
         }catch(error){
@@ -27,7 +27,7 @@ function Register(){
             const result = await signInWithPopup(auth, googleProvider);
             const user = result.user;
 
-            await axios.post("http://localhost:5000/google-login", { 
+            await axios.post("https://chatbot-ozp9.onrender.com/google-login", { 
                 name: user.displayName, 
                 email: user.email 
             });
